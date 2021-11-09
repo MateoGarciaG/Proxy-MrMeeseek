@@ -1,0 +1,22 @@
+{
+  "name": "proxy-mrmeeseek",
+  "version": "1.0.0",
+  "description": "Project Proxy Pattern JS",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateoGarciaG/Proxy-MrMeeseek.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "MateoGarciaG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MateoGarciaG/Proxy-MrMeeseek/issues"
+  },
+  "homepage": "https://github.com/MateoGarciaG/Proxy-MrMeeseek#readme"
+}
