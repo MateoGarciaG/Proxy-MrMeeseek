@@ -4,7 +4,7 @@
  */
 
 // Import singlenton of MrMeeseeks
-let singlentonMrMeeseeks = require('../mrMeeseeks/mrmeeseeks');
+let moduleMrMeeseeks = require('../mrMeeseeks/mrmeeseeks');
 
 // * Creation of Box's Prototype
 function Box() {
@@ -18,17 +18,29 @@ function Box() {
 
 // ? create a new object MrMeeseeks from the MrMeeseeks's prototype 
 Box.prototype.createMrMeeseeks = function() {
-  return "MrMeeseeks";
+
+  // We can use "this" inside a method of a prototype because the prototype has a property call "constructor" which in this case it's link to Box constructor's function which has these properties, so the Box prototype can access to them too.
+  this.mrMeeseeks = !this.mrMeeseeks ? moduleMrMeeseeks.singletonMrMeeseeks.get() : null ;
+
+  // Creation of new Object which it's link to MrMeeseeks prototype, this object is created "empty"
+  return Object.create(this.mrMeeseeks);
+
 }
 
 Box.prototype.pressButton = function(reality) {
   // Parameter "reality" is the collection of MrMeeseks
 
-  return "Press";
+  // Create the "clone" of MrMeeseeks
+  let mrMeeseeksClon = this.createMrMeeseeks();
+  mrMeeseeksClon.speakOnCreate();
+  // Add MrMeeseeks's clon to array
+  reality.push(mrMeeseeksClon);
+
 }
 
 Box.prototype.getProtoMrMeeseeks = function() {
-  return "proto";
+  // Return the "original" MrMeeseeks, in this case it's the MrMeeseeks prototype
+  return this.mrMeeseeks;
 }
 
 // Creation of Box's Singleton
