@@ -1,0 +1,23 @@
+{
+  "name": "box",
+  "version": "1.0.0",
+  "description": "Box Package",
+  "main": "box.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfleta/proxy-pattern-mrMeeseks-js.git"
+  },
+  "keywords": [
+    "js",
+    "proxy-pattern"
+  ],
+  "author": "MateoGarciaG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfleta/proxy-pattern-mrMeeseks-js/issues"
+  },
+  "homepage": "https://github.com/dfleta/proxy-pattern-mrMeeseks-js#readme"
+}
