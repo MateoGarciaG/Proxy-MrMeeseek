@@ -2,6 +2,9 @@
  * Las historias de usuario a programar
  * se encuentran aqui:
  * https://www.youtube.com/watch?v=qUYvIAP3qQk
+ *
+ * by @dfleta
+ *
  */
 
 // node.js modules
@@ -36,7 +39,7 @@ console.assert(mrMeeseeks.messageOnCreate != mrMeeseeks2.messageOnCreate);
 
 // obtengo el meeseeks proto y compruebo que su mensaje
 // onCreate no ha cambiado: shadowing de la variable messageOnCreate
-var proto = box.getProtoMeeseks();
+var proto = box.getProtoMrMeeseeks();
 console.assert(proto.messageOnCreate == "I'm Mr Meeseeks! Look at meeee!");
 console.assert(proto != mrMeeseeks);
 

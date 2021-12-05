@@ -34,7 +34,7 @@ This project is a task from the "DWEC" assignature. It's about to create an appl
 
 ## Historias de Usuarios
 
-<img src="./doc/img/historias-usuario-mrmeeseeks.png">
+<img src="./doc/img/historias-usuarios-mrmeeseeks.png">
 
 
 **[⬆ back to top](#tabla-de-contenidos)**

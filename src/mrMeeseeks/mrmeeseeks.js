@@ -22,7 +22,7 @@ MrMeeseeks.prototype.speakOnCreate = function () {
 };
 
 //
-MrMeeseeks.prototype.speakOnCreate = function () {
+MrMeeseeks.prototype.speakOnRequest = function () {
   // Get a random element from "this.messagesOnRequest" array
   let message = this.messagesOnRequest[
       Math.floor(Math.random() * this.messagesOnRequest.length)
@@ -43,7 +43,7 @@ MrMeeseeks.prototype.makeRequest = function(desire, thing) {
       return `${desire} ${thingAction}`;
     }
     // return closure
-    return executeDesire();
+    return executeDesire;
   };
 
   // Creation of new property "this.action" which will have a
@@ -61,12 +61,12 @@ MrMeeseeks.prototype.makeRequest = function(desire, thing) {
 // will use this.action to get and execute the closure
 MrMeeseeks.prototype.fulfillRequest = function() {
   // Execute closure
-    return this.accion() + " All done!!";
+    return this.action() + " All done!!";
 }
 
 MrMeeseeks.prototype.learnRequest = function(desireFunction, thingToAccomplish) {
   // desireFunction is a function with a closure inside
-  this.accion = desireFunction(thing);
+  this.action = desireFunction(thingToAccomplish);
 };
 
 // MrMeeseeks's singleton
