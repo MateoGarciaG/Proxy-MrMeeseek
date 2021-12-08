@@ -1,0 +1,33 @@
+{
+  "name": "proxy-mrmeeseek",
+  "version": "1.0.0",
+  "description": "Project Proxy Pattern JS",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ./src/main.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateoGarciaG/Proxy-MrMeeseek.git"
+  },
+  "keywords": [
+    "js",
+    "proxypattern",
+    "prototypes",
+    "chain-prototypes",
+    "closures"
+  ],
+  "author": "MateoGarciaG mgarciag@cifpfbmoll.eu https://github.com/MateoGarciaG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MateoGarciaG/Proxy-MrMeeseek/issues"
+  },
+  "homepage": "https://github.com/MateoGarciaG/Proxy-MrMeeseek#readme",
+  "dependencies": {
+    "jest": "^27.4.3"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "mrmeeseeks",
+  "version": "1.0.0",
+  "description": "MrMeeseeks Package",
+  "main": "mrmeeseeks.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfleta/proxy-pattern-mrMeeseks-js.git"
+  },
+  "keywords": [
+    "js",
+    "proxy-pattern",
+    "OOLO",
+    "chain-prototype",
+    "closures"
+  ],
+  "author": "MateoGarciaG mgarciag@cifpfbmoll.eu https://github.com/MateoGarciaG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfleta/proxy-pattern-mrMeeseks-js/issues"
+  },
+  "homepage": "https://github.com/dfleta/proxy-pattern-mrMeeseks-js#readme",
+  "devDependencies": {
+    "jest": "^27.4.3"
+  }
+}
