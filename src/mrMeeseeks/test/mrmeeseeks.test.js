@@ -8,12 +8,12 @@ const { expect } = require('@jest/globals');
 const factory = require('../mrmeeseeks');
 
 test('Creo un meeseeks usando su factoria', () => {
-    expect(factory.singleMrMeeseeks.get()).toBeTruthy;
+    expect(factory.singletonMrMeeseeks.get()).toBeTruthy;
   });
 
 test('Los meeseeks creados son el mismo (singleton)', () => {
-    let meeseeks_primer = factory.singleMrMeeseeks.get();
-    let meeseeks_post = factory.singleMrMeeseeks.get();
+    let meeseeks_primer = factory.singletonMrMeeseeks.get();
+    let meeseeks_post = factory.singletonMrMeeseeks.get();
 
     expect(meeseeks_post === meeseeks_primer).toBe(true);
 });
@@ -36,7 +36,7 @@ describe('scoping de beforeEach', () => {
     beforeEach( () => {
         // inicialización de la variable local antes de cada caso test
         // de poco sirve porque el closure ya se ha ejecutado
-        meeseeks = factory.singleMrMeeseeks.get();
+        meeseeks = factory.singletonMrMeeseeks.get();
 
         // MOCK FUNCTION
 
@@ -80,19 +80,20 @@ describe('scoping de beforeEach', () => {
         meeseeks.makeRequest("open", "Jerry's stupid mayonnaise jar");
 
         // chequeamos si el objeto posee la nueva propiedad que crea makeRequest
-        expect(meeseeks).toHaveProperty('accion')
-        expect(meeseeks.accion()).toEqual(expect.stringMatching("open" + " " + "Jerry's stupid mayonnaise jar"));
+        expect(meeseeks).toHaveProperty('action')
+        expect(meeseeks.action()).toEqual(expect.stringMatching("open" + " " + "Jerry's stupid mayonnaise jar"));
 
         // El prototype de meeseeks no tiene accion().
         // En un nuevo meeseeks busco accion() y delega
         // hasta su prototipo (que es MrMeeseeks.prototype).
         let mrmeeseeks = Object.create(meeseeks);
-        expect(mrmeeseeks.hasOwnProperty('accion')).toBeFalsy();
+        expect(mrmeeseeks.hasOwnProperty('action')).toBeFalsy();
         // => expect(mrmeeseeks).not.toHaveProperty('accion');
 
-        // Acceder directamente al prototipo de meeseeks
+        // Acceder directamente al prototipo de meeseeks que sería Object
         let meeseeksProto = Object.getPrototypeOf(meeseeks);
-        expect(meeseeksProto).not.toHaveProperty('accion');
+        // Object no tiene la propìedad "action"
+        expect(meeseeksProto).not.toHaveProperty('action');
     })
 
     test('fullfillRequest ejecuta this.accion()', () => {
@@ -114,8 +115,8 @@ describe('scoping de beforeEach', () => {
                             .mockName('accionMock') // mensajes especificos en test errors outputs
 
         // inyecto en el objeto la funcion mock
-        meeseeks.accion = accionMock;
-        expect(meeseeks).toHaveProperty('accion');
+        meeseeks.action = accionMock;
+        expect(meeseeks).toHaveProperty('action');
         
         // el objeto meeseeks invoca a la funcion mock
         expect(meeseeks.fulfillRequest()).toEqual(expect.stringMatching("open" + " " + "Jerry's head" + " All done!!"))

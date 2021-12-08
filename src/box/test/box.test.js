@@ -8,7 +8,7 @@ const { expect } = require('@jest/globals');
 const factory = require('../box');
 
 test('Creo la caja usando su factoria', () => {
-    expect(factory.singletonBox.getBox().name).toBe("Rick's box");
+    expect(factory.singletonBox.getBox().name).toBe("Rick's Box");
   });
 
 test('Factoria devuelve siempre la misma caja (singleton)', () => {
@@ -63,7 +63,7 @@ describe('scoping de beforeEach', () => {
 
       // obtengo el meeseeks proto y compruebo que su mensaje
       // onCreate no ha cambiado: shadowing de la variable messageOnCreate
-      let proto = box.getProtoMeeseks();
+      let proto = box.getProtoMrMeeseeks();
       expect(proto).toHaveProperty('messageOnCreate');
       expect(proto.messageOnCreate).toEqual(expect.stringMatching("I'm Mr Meeseeks! Look at meeee!"));
     });
@@ -83,7 +83,8 @@ describe('scoping de beforeEach', () => {
         // el nuevo objeto no es nulo y es un meeseek
         expect(reality[0]).toHaveProperty('messageOnCreate', "I'm Mr Meeseeks! Look at meeee!");
           
-        let meeseeks = box.getProtoMeeseks();
+        let meeseeks = box.getProtoMrMeeseeks();
+        // ObjectContaining -> si el array u objeto contiene ese valor, en este caso el clon MrMeeseeks si tienen al Prototype MrMeeseeks, no dentro de sí, sino por encadenamiento __proto__
         expect(reality[0]).toEqual(expect.objectContaining(meeseeks));
         // toBeInstanceOf no puedo utilizarlo porque no tengo acceso
         // a la funcion constructora MrMeeseeks

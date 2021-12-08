@@ -21,7 +21,7 @@ Box.prototype.createMrMeeseeks = function () {
   // this.mrMeeseeks = !this.mrMeeseeks ? moduleMrMeeseeks.singletonMrMeeseeks.get() : null;
 
   if (!this.mrMeeseeks) {
-    this.mrMeeseeks = moduleMrMeeseeks.singletonMrMeeseeks.get()
+    this.mrMeeseeks = moduleMrMeeseeks.singletonMrMeeseeks.get();
 }
 
   // Creation of new Object which it's link to MrMeeseeks prototype, this object is created "empty"
